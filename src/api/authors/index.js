@@ -12,7 +12,7 @@ const authorsJSONPath = join(
   "authors.json"
 );
 
-const fileContent = fs.readFileSync(authorsJSONPath);
+// const fileContent = fs.readFileSync(authorsJSONPath);
 
 // GET /authors => returns the list of authors: http://localhost:3001/authors
 // GET /authors/123 => returns a single author: http://localhost:3001/authors/:authorId
@@ -50,6 +50,7 @@ authorsRouter.post("/", (req, res) => {
   console.log("request body", req.body);
   const newAuthor = {
     ...req.body,
+    avatar: `https://ui-avatars.com/api/?name=${req.body.name}+${req.body.surname}`,
     id: uniqid(),
     createdAt: new Date(),
     updatedAt: new Date(),
