@@ -2,6 +2,7 @@ import express from "express";
 import listEndpoints from "express-list-endpoints";
 import authorsRouter from "./api/authors/index.js";
 import createHttpError from "http-errors";
+import cors from "cors";
 
 //creates an express server; it is an object
 const server = express();
