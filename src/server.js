@@ -39,4 +39,5 @@ server.use("/authors", authorsRouter);
 //server needs to run
 server.listen(port, () => {
   console.table(listEndpoints(server));
+  console.log("server running on port: ", port);
 });
